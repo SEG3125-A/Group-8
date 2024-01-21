@@ -17,19 +17,19 @@ var products = [
 	},
 	{
 		name: "Quinoa",
-		vegetarian: false,
+		vegetarian: true,
 		glutenFree: true,
 		price: 5.35
 	},
 	{
 		name: "Lentille",
-		vegetarian: false,
+		vegetarian: true,
 		glutenFree: true,
 		price: 3.35
 	},
 	{
 		name: "Tofu",
-		vegetarian: false,
+		vegetarian: true,
 		glutenFree: true,
 		price: 8.00
 	},
@@ -41,31 +41,31 @@ var products = [
 	},
 	{
 		name: "Almonds",
-		vegetarian: false,
+		vegetarian: true,
 		glutenFree: true,
 		price: 6.78
 	},
 	{
 		name: "Walnuts",
-		vegetarian: false,
+		vegetarian: true,
 		glutenFree: true,
 		price: 7.98
 	},
 	{
 		name: "Chia Seeds",
-		vegetarian: false,
+		vegetarian: true,
 		glutenFree: true,
 		price: 6.77
 	},
 	{
 		name: "Potato",
-		vegetarian: false,
+		vegetarian: true,
 		glutenFree: true,
 		price: 4.56
 	},
 	{
 		name: "Sweet Potato",
-		vegetarian: false,
+		vegetarian: true,
 		glutenFree: true,
 		price: 5.76
 	},
