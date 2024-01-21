@@ -4,23 +4,73 @@
 
 var products = [
 	{
-		name: "brocoli",
+		name: "Brocoli",
 		vegetarian: true,
 		glutenFree: true,
 		price: 1.99
 	},
 	{
-		name: "bread",
+		name: "Bread",
 		vegetarian: true,
 		glutenFree: false,
 		price: 2.35
 	},
 	{
-		name: "salmon",
+		name: "Quinoa",
+		vegetarian: false,
+		glutenFree: true,
+		price: 5.35
+	},
+	{
+		name: "Lentille",
+		vegetarian: false,
+		glutenFree: true,
+		price: 3.35
+	},
+	{
+		name: "Tofu",
+		vegetarian: false,
+		glutenFree: true,
+		price: 8.00
+	},
+	{
+		name: "Salmon",
 		vegetarian: false,
 		glutenFree: true,
 		price: 10.00
-	}
+	},
+	{
+		name: "Almonds",
+		vegetarian: false,
+		glutenFree: true,
+		price: 6.78
+	},
+	{
+		name: "Walnuts",
+		vegetarian: false,
+		glutenFree: true,
+		price: 7.98
+	},
+	{
+		name: "Chia Seeds",
+		vegetarian: false,
+		glutenFree: true,
+		price: 6.77
+	},
+	{
+		name: "Potato",
+		vegetarian: false,
+		glutenFree: true,
+		price: 4.56
+	},
+	{
+		name: "Sweet Potato",
+		vegetarian: false,
+		glutenFree: true,
+		price: 5.76
+	},
+
+
 ];
 	
 
