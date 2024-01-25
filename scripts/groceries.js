@@ -4,81 +4,99 @@
 
 var products = [
 	{
-		name: "Brocoli",
+		name: "Broccoli",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		price: 1.99
+		price: 1.99,
+		image: "scripts/Broccoli.jpg",
 	},
 	{
 		name: "Bread",
 		vegetarian: true,
 		glutenFree: false,
 		organic: false,
-		price: 2.35
+		price: 2.35,
+		image: "scripts/Bread.jpg",
 	},
 	{
 		name: "Quinoa",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		price: 5.35
+		price: 5.35,
+		image: "scripts/Quinoa.jpg",
 	},
 	{
 		name: "Lentille",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		price: 3.35
+		price: 3.35,
+		image: "scripts/Lentille.jpg",
+
 	},
 	{
 		name: "Tofu",
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		price: 8.00
+		price: 8.00,
+		image: "scripts/Tofu.jpg",
+
 	},
 	{
 		name: "Salmon",
 		vegetarian: false,
 		glutenFree: true,
 		organic: true,
-		price: 10.00
+		price: 10.00,
+		image: "scripts/Salmon.jpg",
+
 	},
 	{
 		name: "Almonds",
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		price: 6.78
+		price: 6.78,
+		image: "scripts/Almonds.jpg",
+
 	},
 	{
 		name: "Walnuts",
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		price: 7.98
+		price: 7.98,
+		image: "scripts/Walnuts.jpg",
+
 	},
 	{
 		name: "Chia Seeds",
 		vegetarian: true,
 		glutenFree: true,
 		organic: false,
-		price: 6.77
+		price: 6.77,
+		image: "scripts/Chia-Seeds.jpg",
+
 	},
 	{
 		name: "Potato",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		price: 4.56
+		price: 4.56,
+		image: "scripts/Potato.jpg",
 	},
 	{
 		name: "Sweet Potato",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
-		price: 5.76
+		price: 5.76,
+		image: "scripts/Sweet-Potato.jpg",
+
 	},
 
 
