@@ -50,6 +50,7 @@ function populateListProductChoices(slct1, slct2) {
 			
 		var productName = optionArray[i].name;
 		var productPrice = optionArray[i].price.toFixed(2);
+		var productImage = optionArray[i].image;
 		// create the checkbox and add in HTML DOM
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
@@ -57,6 +58,12 @@ function populateListProductChoices(slct1, slct2) {
 		checkbox.value = [productName, productPrice];
 		s2.appendChild(checkbox);
 		
+		var image = document.createElement("img");
+        image.src = productImage;
+        image.alt = productName;
+		image.classList.add("product-image");
+        s2.appendChild(image);
+
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName ;
@@ -90,6 +97,14 @@ function selectedItems(){
 			var element = ele[i].value.split(",")
 			var productName = element[0]
 			var productPrice = element[1]
+			var productImage = element[2];
+			
+			// create an image element for the selected item
+            var selectedImage = document.createElement("img");
+            selectedImage.src = productImage;
+            selectedImage.alt = productName;
+            para.appendChild(selectedImage);
+
 			para.appendChild(document.createTextNode(productName+" ... $"+productPrice));
 			para.appendChild(document.createElement("br"));
 			chosenProducts.push(productName);
