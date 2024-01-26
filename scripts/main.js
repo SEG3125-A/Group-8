@@ -35,7 +35,7 @@ function populateListProductChoices(slct1, slct2) {
     s2.innerHTML = "";
 		
 	// obtain a reduced list of products based on restrictions, is a dictionary so it contains all the fields
-    var optionArray = restrictListProducts(products, s1.value, );
+    var optionArray = restrictListProducts(products, s1.value);
 
 	// sort the list by lowest to highest price
 	optionArray.sort(function(a, b) {
@@ -61,20 +61,24 @@ function populateListProductChoices(slct1, slct2) {
 		var image = document.createElement("img");
         image.src = productImage;
         image.alt = productName;
-		image.classList.add("product-image");
+		image.className = "product-image"; // Assign a class to your image
         s2.appendChild(image);
-
+		
+		let numSpaces = 10;
+		let spaces = " ".repeat(numSpaces);
 		// create a label for the checkbox, and also add in HTML DOM
 		var label = document.createElement('label')
 		label.htmlFor = productName ;
-		label.appendChild(document.createTextNode(productName+" ... $"+productPrice));
+		label.className = "product"; // Assign a class to your label
+		label.innerHTML = productName + " ... $" + productPrice;
 		s2.appendChild(label);
 		
 		// create a breakline node and add in HTML DOM
 		s2.appendChild(document.createElement("br"));    
 	}
-
 }
+
+
 	
 // This function is called when the "Add selected items to cart" button in clicked
 // The purpose is to build the HTML to be displayed (a Paragraph) 
@@ -92,24 +96,33 @@ function selectedItems(){
 	var para = document.createElement("P");
 	para.innerHTML = "You selected : ";
 	para.appendChild(document.createElement("br"));
+	para.appendChild(document.createElement("br"));
 	for (i = 0; i < ele.length; i++) { 
 		if (ele[i].checked) {
 			var element = ele[i].value.split(",")
 			var productName = element[0]
 			var productPrice = element[1]
 			var productImage = element[2];
-			
+		
 			// create an image element for the selected item
-            var selectedImage = document.createElement("img");
-            selectedImage.src = productImage;
-            selectedImage.alt = productName;
-            para.appendChild(selectedImage);
+			var selectedImage = document.createElement("img");
+			//selectedImage.src = productImage;
+			//selectedImage.alt = productName;
 
-			para.appendChild(document.createTextNode(productName+" ... $"+productPrice));
-			para.appendChild(document.createElement("br"));
+			// create a wrapper div for the product name, price, and image
+			var productWrapper = document.createElement("div");
+			productWrapper.style.position = "relative";
+
+			// append the product name and price to the wrapper
+			productWrapper.appendChild(document.createTextNode(productName+" ... $"+productPrice));
+
+			// append the wrapper to the para
+			para.appendChild(productWrapper);
+
 			chosenProducts.push(productName);
 		}
 	}
+
 		
 	// add paragraph and total price
 	c.appendChild(para);

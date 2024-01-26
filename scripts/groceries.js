@@ -28,12 +28,12 @@ var products = [
 		image: "scripts/Quinoa.jpg",
 	},
 	{
-		name: "Lentille",
+		name: "Lentil",
 		vegetarian: true,
 		glutenFree: true,
 		organic: true,
 		price: 3.35,
-		image: "scripts/Lentille.jpg",
+		image: "scripts/Lentil.jpg",
 
 	},
 	{
