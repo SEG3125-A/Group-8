@@ -7,7 +7,7 @@
 
 
 <body>
-  <h1><center>Green & Fresh Store</center></h1>
+<div class="BGText">Green & Fresh Store</div>
 
 <!-- Tab links, each one with an onclick event associated with it -->
 <div class="tab">
@@ -17,6 +17,8 @@
 </div>
 
 <!-- Tab content -->
+<br>
+<br>
 <div id="Client" class="tabcontent">
   <h3>Client Information</h3>
   <p>Tell us a bit about you.</p>
@@ -26,7 +28,10 @@
 	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
 	<option value=""></option>
 	<option value="Vegetarian">Vegetarian</option>
-    <option value="GlutenFree">GlutenFree</option>
+    <option value="GlutenFree">Gluten Free</option>
+    <option value="Fruits">Fruits</option>
+    <option value="Dairy">Dairy</option>
+    <option value="Meats">Meats</option>
     <option value="None">None</option>
 	</select>
   <p>Would you like organic  produce? 
