@@ -16,16 +16,32 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 50%;
+  z-index: 2;
 }
 
-h1 {
-  color: #228b22; /* forest green */
+.BGText {
+  color: rgb(34, 139, 34, 0.35); /* forest green */
+  font-weight: bold;
+  font-size: 110px;
+  position: fixed; /* Stay fixed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  width: 300px;
+  padding: 20px;
+  text-align: center;
 }
 
 .tab {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1; /* off white */
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 3;
 }
 
 .tab button {
@@ -87,4 +103,3 @@ input[type=submit]:hover {
   text-align: right;
   color: #808080; /* gray */
 }
-
