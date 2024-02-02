@@ -68,13 +68,13 @@ body {
   width: 300px;
   padding: 20px;
   text-align: center;
-  animation: fade 3s infinite; /* Add this line */
+  animation: fade 3s infinite;
 }
 
 @keyframes fade {
-  0% {opacity: 0.2;}
-  50% {opacity: 0.2;}
-  100% {opacity: 0.2;}
+  0% {opacity: 0.5;}
+  50% {opacity: 0.5;}
+  100% {opacity: 0.5;}
 }
 
 
