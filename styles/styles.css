@@ -1,6 +1,41 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f5dc; /* beige */
+  display: flex; /* Add this line */
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1; /* off white */
+  position: sticky; /* Change from fixed to sticky */
+  top:0;
+  width: 20%; /* Reduce the width */
+  height: 100vh; /* Add this line */
+  z-index: 3;
+}
+
+.tab button {
+  background-color: #f1f1f1; /* off white */
+  display: block; /* Change from float to display */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  width: 100%; /* Add this line */
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-left: none; /* Change from border-top to border-left */
+  margin-left: 0;
+  margin-right: 0;
+  width: 80%; /* Add this line */
+  overflow: auto; /* Add this line */
 }
 
 .product {
@@ -32,45 +67,6 @@ body {
   width: 300px;
   padding: 20px;
   text-align: center;
-}
-
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1; /* off white */
-  position: fixed;
-  top:0;
-  width: 100%;
-  z-index: 3;
-}
-
-.tab button {
-  background-color: #f1f1f1; /* off white */
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-}
-
-.tab button:hover {
-  background-color: #ddd; /* light gray */
-}
-
-.tab button.active {
-  background-color: #228b22; /* forest green */
-  color: white;
-}
-
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 input[type=text], select {
