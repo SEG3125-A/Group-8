@@ -188,7 +188,7 @@ var products = [
 		Dairy:false,
 		Meats:false,
 		price: 3.35,
-		image: "scripts/Lentil.jpg",
+		image: "scripts/Lentille.jpg",
 
 	},
 	{
