@@ -68,7 +68,15 @@ body {
   width: 300px;
   padding: 20px;
   text-align: center;
+  animation: fade 3s infinite; /* Add this line */
 }
+
+@keyframes fade {
+  0% {opacity: 0.2;}
+  50% {opacity: 0.2;}
+  100% {opacity: 0.2;}
+}
+
 
 input[type=text], select {
   width: 100%;
@@ -99,4 +107,8 @@ input[type=submit]:hover {
   font-size: small;
   text-align: right;
   color: #808080; /* gray */
+  position: fixed; 
+  bottom: 0; 
+  right: 0; 
 }
+
