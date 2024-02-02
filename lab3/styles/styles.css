@@ -1,15 +1,51 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f5dc; /* beige */
+  display: flex; 
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1; /* off white */
+  position: sticky; 
+  top:0;
+  width: 20%; 
+  height: 100vh; 
+  z-index: 3;
+}
+
+.tab button {
+  background-color: #f1f1f1; /* off white */
+  display: block; 
+  border: 1px solid #ccc; 
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  width: 100%; 
+}
+
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-left: none; 
+  margin-left: 0;
+  margin-right: 0;
+  width: 80%; 
+  overflow: auto; 
 }
 
 .product {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black; /* Adjust as needed */
-  padding: 10px; /* Adjust as needed */
-  margin: 10px; /* Adjust as needed */
+  border: 1px solid black; 
+  padding: 10px; 
+  margin: 10px; 
 }
 
 .product-image {
@@ -24,7 +60,7 @@ body {
   color: rgb(34, 139, 34, 0.35); /* forest green */
   font-weight: bold;
   font-size: 110px;
-  position: fixed; /* Stay fixed */
+  position: fixed; 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -32,45 +68,6 @@ body {
   width: 300px;
   padding: 20px;
   text-align: center;
-}
-
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1; /* off white */
-  position: fixed;
-  top:0;
-  width: 100%;
-  z-index: 3;
-}
-
-.tab button {
-  background-color: #f1f1f1; /* off white */
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-}
-
-.tab button:hover {
-  background-color: #ddd; /* light gray */
-}
-
-.tab button.active {
-  background-color: #228b22; /* forest green */
-  color: white;
-}
-
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 input[type=text], select {
