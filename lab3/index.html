@@ -24,14 +24,11 @@
   <p>Tell us a bit about you.</p>
   <p>First name: <input type="text" name="firstname"></p>
 	<p>Last name: <input type="text" name="lastname"></p>
-	Choose a Category:
+	Select any Dietary Preferences:
 	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-	<option value=""></option>
-	<option value="Vegetarian">Vegetarian</option>
+	  <option value=""></option>
+	  <option value="Vegetarian">Vegetarian</option>
     <option value="GlutenFree">Gluten Free</option>
-    <option value="Fruits">Fruits</option>
-    <option value="Dairy">Dairy</option>
-    <option value="Meats">Meats</option>
     <option value="None">None</option>
 	</select>
   <p>Would you like organic produce? 
@@ -44,11 +41,17 @@
 <div id="Products" class="tabcontent">
   <h3>Your targeted products</h3>
   <p>Products are chosen based on your preferences.</p>
+  <p>Filter Search</p>
+  <select id="foodCat" name="foodCat" onchange="populateListProductChoices(this.id, 'displayProduct')" >
+    <option value="None">All</option>
+    <option value="Fruits">Fruits</option>
+    <option value="Dairy">Dairy</option>
+    <option value="Meats">Meats</option>
+  </select>
+
 	 Choose items to buy:
 	 <div id="displayProduct"></div>
-	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
-		Add selected items to cart.
-	</button>
+   <button class="button button1" onclick="selectedItems()">Add selected items to cart.</button>
 </div>
 
 <div id="Cart" class="tabcontent">

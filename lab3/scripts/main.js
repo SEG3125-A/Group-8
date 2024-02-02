@@ -78,7 +78,6 @@ function populateListProductChoices(slct1, slct2) {
 	}
 }
 
-
 	
 // This function is called when the "Add selected items to cart" button in clicked
 // The purpose is to build the HTML to be displayed (a Paragraph) 
