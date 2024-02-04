@@ -10,7 +10,7 @@
 
 <!-- The head should contain an appropriate title for your site -->
 <head>
-    <title>Module 4 - Labo</title>
+    <title>Lab4</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,15 +23,34 @@
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
     <style>
-        .custom-container {
-          background-color: rgb(242, 61, 92);
-        }
-    
-        .pink-background {
-          background-color: rgb(242, 61, 92);
-        }
-      </style>
-       <style>
+      .bg-chic-hair-salon {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          background-image: url('images/BG.jpg');
+          background-size: 100% 100%;
+          background-repeat: no-repeat;   
+      }
+      .bg-chic-hair-salon::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgb(223, 71, 152); 
+          opacity: 0.25; 
+      }
+      .bg-chic-hair-salon .container-md {
+          position: relative;
+          z-index: 5;
+          padding: 100px; 
+      }
+      .color-text {
+        color: rgb(24, 23, 23); 
+      }
+  </style>
+     <style>
         .bg-pink {
           background-color: pink;
         }
@@ -57,12 +76,20 @@
     <!-- Look in BS4 Typography https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
     <!-- Use your own CSS file to change those fonts if they do not correspond to your company's look -->
     
-    <div class="container-md p-3 my-3 border custom-container text-white">
-        <h1>Chic Hair Salon</h1>
-        <div class="pink-background">
-          <p>We will help you with your next look!</p>
-        </div>
+    <div class="bg-chic-hair-salon">
+      <div class="container-md p-3 my-3 border custom-container text-white">
+        <h1 class="color-text">Chic Hair Salon</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+          <div class="pink-background">
+              <p1 class="color-text">We will help you with your next look!</p1>
+          </div>
       </div>
+  </div>
 
     <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
     <!-- It can be useful for placement of information -->
