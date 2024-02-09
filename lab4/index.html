@@ -1,7 +1,9 @@
 <!-- This file contains many elements adapted from the online tutoral -->
 <!-- on Bootstrap 4 as found here: https://www.w3schools.com/bootstrap4/default.asp -->
 
-
+<!-- Images source: -->
+<!-- jule.jpg taken from https://www.freepik.com/premium-vector/cartoon-successful-hairdresser_3951066.htm -->
+<!-- Erwind.jpb https://www.kijiji.ca/v-construction-trades-jobs/winnipeg/bicycle-mechanic/1499188319 -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,19 +27,21 @@
           position: relative;
           width: 100%;
           height: 100%;
-          background-image: url('images/BG.jpg');
+          background-image: url('images/BG1.jpg');
           background-size: 100% 100%;
           background-repeat: no-repeat;   
+          
       }
       .bg-chic-hair-salon::before {
           content: "";
           position: absolute;
           top: 0;
           left: 0;
+
           width: 100%;
           height: 100%;
           background-color: rgb(223, 71, 152); 
-          opacity: 0.25; 
+          opacity: 0.1; 
       }
       .bg-chic-hair-salon .container-md {
           position: relative;
@@ -137,7 +141,7 @@
             <tr>
               <th>Hair</th>
               <th>Nail</th>
-              <th>Make up</th>
+              <th>Makeup</th>
               <th>Price</th>
             </tr>
           </thead>
@@ -164,7 +168,40 @@
         </table>
       </div>
 
-
+      <div class="container border bg-pink" style="width: 1100px; justify-content: center;"><br>
+        <a href="#appointment" class="btn btn-primary btn-block dark-pink-button" style= "width: 1075px;" data-toggle="collapse">Book an appointment</a><br>
+        <div id="appointment" class="collapse" style="height: fit-content;">
+          <form action="/submit" method="post">
+            <!-- Service Selection -->
+            <label for="service">Select a Service:</label>
+            <select id="service" name="service">
+                <option disabled selected value> -- select an option -- </option>
+                <option value="1">Hair</option>
+                <option value="2">Nail</option>
+                <option value="3">Makeup</option>
+            </select><br>
+            <label for="service">Type of Service:</label>
+            <input type="text" id="tos" name="tos"><br>
+            <!-- Date and Time Selection -->
+            <label for="appointmentDate">Choose a Date:</label>
+            <input type="date" id="appointmentDate" name="appointmentDate"><br>
+    
+            <label for="appointmentTime">Choose a Time:</label>
+            <input type="time" id="appointmentTime" name="appointmentTime"><br>
+    
+            <!-- Contact Information -->
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" required><br>
+    
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+            
+            <input type="submit" value="Submit"><br>
+            
+        </form>
+        <br>
+        </div>
+    </div>
     <!-- Bootstrap has components for alerts: https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp  -->
     <!-- These can be useful for making sure someone reads something before continuing -->
     <div class="container">
@@ -175,16 +212,6 @@
         </div>
     </div>
 
-    <!-- You'll certainly need buttons at some point in your site -->
-    <!-- https://www.w3schools.com/bootstrap4/bootstrap_buttons.asp -->
-    <!-- Remember how we talked about choosing a hue and changing the saturation for active/inactive -->
-    <!-- This idea is already part of the components in Bootstrap -->
-    <div class="container">
-        <h2>Button States</h2>
-        <button type="button" class="btn btn-warning">Primary Button</button>
-        <button type="button" class="btn btn-warning active">Active Primary</button>
-        <button type="button" class="btn btn-warning" disabled>Disabled Primary</button>
-    </div>
 
 
     <!-- Including a modal https://www.w3schools.com/bootstrap4/bootstrap_modal.asp -->
@@ -269,6 +296,7 @@
           </div>
         </div>
     </div>
+    
 
 
     <!-- A different approach would be to make the whole staff information collapsible -->
