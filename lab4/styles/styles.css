@@ -6,8 +6,27 @@
 /* Bootstrap default font-family is Helvetica Neue */
 
 h1 {
-    font-family: "Times New Roman", Times, serif;
+    font-family: 'Brush Script MT', cursive;
     text-shadow: 3px 3px 1px black;
     
   }
-  
+
+p1 {
+   font-family: 'Brush Script MT', cursive;
+   text-shadow: 3px 3px 1px black;
+   
+ }
+
+ .map-container-2{
+   overflow:hidden;
+   padding-bottom:56.25%;
+   position:relative;
+   height:0;
+ }
+ .map-container-2 iframe{
+   left:0;
+   top:0;
+   height:100%;
+   width:100%;
+   position:absolute;
+ }
