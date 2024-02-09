@@ -90,15 +90,17 @@
 
     <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
     <!-- It can be useful for placement of information -->
-    <div class="row p-3">
-        <div class="col-sm-3 pl-5">Service</div>
-        <div class="col-sm-3">Calendar</div>
-        <div class="col-sm-3">Payment</div>
-        <div class="col-sm-3">Contact us</div>
-    </div>
+    <div class="container">
+      <nav class="row p-3">
+          <div class="col-sm-3 pl-5">Service</div>
+          <div class="col-sm-3">Calendar</div>
+          <div class="col-sm-3">Payment</div>
+          <div class="col-sm-3">Contact us</div>
+      </nav>
+  </div>
 
     <!-- When you have messages to tell, remember that center align is not always the best choice -->
-    <div class="container p-3 my-3 border bg-light ">
+    <div class="container p-3 my-3 border bg-light " style="width: 650px;">
       <h3>Let us tell you about our expertise</h3>
       <div class="card-columns">
         <div class="card bg-pink" style="width: 200px;">
@@ -171,7 +173,7 @@
         <h2>Holiday Hours</h2>
         <div class="alert alert-danger alert-dismissible">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
-            We will be <strong>closed Feb 19th</strong> for Family Day!.
+            We will be <strong>closed Feb 19th</strong> for Family Day!
         </div>
     </div>
 
@@ -191,49 +193,60 @@
     <!-- Modals are useful for additional information or questions -->
     <!-- Here the modal is used for a little survey -->
     <div class="container">
-        <h2>Modal Example</h2>
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mySurvey">Open Survey</button>
-          
-        <!-- Modal -->
-        <div class="modal fade" id="mySurvey" role="dialog">
-            <div class="modal-dialog">  
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <h2>How did you hear about us?</h2>
-                        <p>Tell us:</p>
-                        <form>
-                          <div class="checkbox">
-                            <label><input type="checkbox" value="">Option 1</label>
-                          </div>
-                          <div class="checkbox">
-                            <label><input type="checkbox" value="">Option 2</label>
-                          </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>     
-        </div>
-        </div>    
-    </div>
+      <h2>Modal Example</h2>
+      <!-- Trigger the modal with a button -->
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mySurvey">Open Survey</button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="mySurvey" role="dialog">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      
+                      <h4 class="modal-title">Survey</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="container">
+                          <h2>How did you hear about us?</h2>
+                          <p>Tell us:</p>
+                          <form>
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" value="Social Media"> Social Media
+                                  </label>
+                              </div>
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" value="Friends & Family"> Friends & Family
+                                  </label>
+                              </div>
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" value="Other" id="otherCheckbox"> Other
+                                  </label>
+                                  <input type="text" id="otherTextInput" style="display: none;">
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
     <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
     <!-- Card columns allows multiple cards next to each other -->
     <!-- The first card's button doesn't go anywhere, it could be a modal --> 
     <!-- My second card limits the information seen and uses collapsible to show more -->
     
-    <div class="container p-3">
+    <div class="container p-3" style="width: 1200px;">
         <h2>Meet our Stylists</h2>
-        <div class="card-columns">
-          <div class="card bg-pink" style="width: 200px;">
+        <div class="card-columns" style="width: 650px;">
+          <div class="card bg-pink" style="width: 197px; text-align: left;">
             <img class="card-img-top" src="images/Sara.jpg" alt="Card image" style="width: 100%;">
             <div class="card-body">
               <h4 class="card-title">Sara</h4>
@@ -244,14 +257,14 @@
               </div>
             </div>
           </div>
-        <div class="card bg-pink" style="width: 200px;">
+        <div class="card bg-pink" style="width: 197px;">
             <img class="card-img-top" src="images/Zoya.jpg" alt="Card image" style="width: 100%;">
             <div class="card-body">
               <h4 class="card-title">Zoya</h4>
               <p class="card-text">The curly hair specialist</p>
               <!-- collapsible part -->
-              <a href="#profile" class="btn btn-primary dark-pink-button" data-toggle="collapse">See Profile</a>
-              <div id="profile" class="collapse p-3">
+              <a href="#profile-zoya" class="btn btn-primary dark-pink-button" data-toggle="collapse">See Profile</a>
+              <div id="profile-zoya" class="collapse p-3">
                 <p>Zoya has been our in our salon for 7 years. </p>
               </div>
             </div>
@@ -267,18 +280,39 @@
         <h2>More information</h2>
         <a href="#contact" class="btn btn-primary btn-block dark-pink-button" data-toggle="collapse">Our Contact Info</a>
         <div id="contact" class="collapse">
-          <p>Phone Number: 519-555-5555</p>
+          <p><br>Phone Number: 519-555-5555</p>
           <p>Email Address: chichcuts@email.com</p>
         </div>
         <a href="#address" class="btn btn-primary btn-block dark-pink-button" data-toggle="collapse">Location</a>
         <div id="address" class="collapse" style="height: fit-content;">
-          <p>Location: 555 Main St. Ottawa, ON A1B 2C3</p>
+          <p><br>Location: 555 Main St. Ottawa, ON A1B 2C3</p>
           <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 180px">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d719085.851534262!2d-76.4597105321139!3d45.24922630491754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce05b25f5113af%3A0x8a6a51e131dd15ed!2sOttawa%2C%20ON!5e0!3m2!1sen!2sca!4v1707443294496!5m2!1sen!2sca" frameborder="0"
               style="border:0" allowfullscreen></iframe>
           </div>
         </div>
     </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const otherCheckbox = document.getElementById('otherCheckbox');
+            const otherTextInput = document.getElementById('otherTextInput');
+
+            otherCheckbox.addEventListener('change', function () {
+                if (otherCheckbox.checked) {
+                    otherTextInput.style.display = 'block';
+                } else {
+                    otherTextInput.style.display = 'none';
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
