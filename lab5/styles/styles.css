@@ -1,0 +1,60 @@
+
+/* Style sheet
+   color picker www.w3schools.com/colors/colors_picker.asp
+*/
+
+/* Bootstrap default font-family is Helvetica Neue */
+
+h1 {
+  font-family: 'Brush Script MT', cursive;
+  text-shadow: 3px 3px 1px black;
+  
+}
+h1 {
+  text-align: left;
+  
+}
+p1 {
+ font-family: 'Brush Script MT', cursive;
+ text-shadow: 3px 3px 1px black;
+ 
+}
+
+.map-container-2{
+ overflow:hidden;
+ padding-bottom:56.25%;
+ position:relative;
+ height:0;
+}
+.map-container-2 iframe{
+ left:0;
+ top:0;
+ height:100%;
+ width:100%;
+ position:absolute;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+/* Add other container styles */
+}
+
+.row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+/* Add other row styles */
+}
+
+/* Add specific styles for each column if necessary */
+.col-sm-3 {
+padding: 1px;
+background-color: #f9f9f9;
+/* Add other column styles */
+}
+
+.modal-header {
+text-align: left;
+display: flex;
+justify-content: flex-start;
+}

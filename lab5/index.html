@@ -1,0 +1,342 @@
+<!-- This file contains many elements adapted from the online tutoral -->
+<!-- on Bootstrap 4 as found here: https://www.w3schools.com/bootstrap4/default.asp -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- The head should contain an appropriate title for your site -->
+<head>
+    <title>Lab4</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+
+    <!-- Your own additional style sheet -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <style>
+      .bg-chic-hair-salon {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          background-image: url('images/BG1.jpg');
+          background-size: 100% 100%;
+          background-repeat: no-repeat;   
+          
+      }
+      .bg-chic-hair-salon::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          width: 100%;
+          height: 100%;
+          background-color: rgb(223, 71, 152); 
+          opacity: 0.1; 
+      }
+      .bg-chic-hair-salon .container-md {
+          position: relative;
+          z-index: 5;
+          padding: 100px; 
+      }
+      .center-block {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+      }
+  </style>
+     <style>
+        .bg-pink {
+          background-color: pink;
+        }
+        
+        .dark-pink-button {
+          background-color: darkred;
+          border-color: darkred;
+        }
+        
+        .dark-pink-button:hover {
+          background-color: lightcoral;
+          border-color: lightcoral;
+        }
+      </style>
+</head>
+
+
+<body>
+
+    <!-- Medium size container, padding 3, margins 3, background dark, text is white -->
+    <!-- Should show the name of your company with an image or logo -->
+    <!-- Bootstrap has its own font for H1, H2, p, etc.  -->
+    <!-- Look in BS4 Typography https://www.w3schools.com/bootstrap4/bootstrap_typography.asp -->
+    <!-- Use your own CSS file to change those fonts if they do not correspond to your company's look -->
+    
+    <div class="bg-chic-hair-salon">
+      <div class="container-md p-3 my-3 border custom-container text-dark-pink">
+        <img src="./images/logo.png" class="center-block" alt="logo" style="height: 200px; width: 200px;">
+          <div class="white-background">
+            <br>
+            <h4 class="text-center">Chic Styles For All</h4>
+          </div>
+      </div>
+  </div>
+
+    <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
+    <!-- It can be useful for placement of information -->
+    <div class="container">
+      <nav class="row p-3">
+          <div class="col-sm-3 pl-5">Service</div>
+          <div class="col-sm-3">Calendar</div>
+          <div class="col-sm-3">Payment</div>
+          <div class="col-sm-3">Contact us</div>
+      </nav>
+  </div>
+
+    <!-- When you have messages to tell, remember that center align is not always the best choice -->
+    <div class="container p-3 my-3 border bg-light " style="width: 650px;">
+      <h3>Let us tell you about our expertise</h3>
+      <div class="card-columns">
+        <div class="card bg-pink" style="width: 200px;">
+          <img class="card-img-top" src="./images/cutHair.jpg" alt="Card image" style="width: 100%;height: 220px;">
+          <div class="card-body">
+            <h4 class="card-title">Hair Cuts</h4>
+          </div>
+        </div>
+        <div class="card bg-pink" style="width: 200px;">
+            <img class="card-img-top" src="./images/colourHair.jpg" alt="Card image" style="width: 100%;height: 220px;">
+            <div class="card-body">
+              <h4 class="card-title">Hair Colour</h4>
+            </div>
+        </div>
+        <div class="card bg-pink" style="width: 200px;">
+            <img class="card-img-top" src="./images/nails.jpg" alt="Card image" style="width: 100%; height: 220px;">
+            <div class="card-body">
+              <h4 class="card-title">Manis & Pedis</h4>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+        .custom-table {
+          background-color: rgb(235, 79, 105);
+        }
+      </style>
+    <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
+    <!-- Might be (or not) useful to show some information to the user -->
+    <div class="container">
+        <h2>List of Services</h2>
+        <p>You can choose from these packages for your first visit with us! </p>            
+        <table class="table table-hover custom-table">
+          <thead>
+            <tr>
+              <th>Hair</th>
+              <th>Nail</th>
+              <th>Makeup</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hair Cut</td>
+              <td>Pedicure</td>
+              <td>Natural</td>
+              <td>$150</td>
+            </tr>
+            <tr>
+                <td>Foil Highlighting</td>
+                <td>Shellac Manicure & Pedicure</td>
+                <td>Smokey</td>
+                <td>$300</td>
+            </tr>
+            <tr>
+              <td>All Over Colouring</td>
+              <td>Manicure & Pedicure</td>
+              <td>Bridal</td>
+              <td>$850</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container border bg-pink" style="width: 1100px; justify-content: center;"><br>
+        <a href="#appointment" class="btn btn-primary btn-block dark-pink-button" style= "width: 1075px;" data-toggle="collapse">Book an appointment</a><br>
+        <div id="appointment" class="collapse" style="height: fit-content;">
+          <form action="/submit" method="post">
+            <!-- Service Selection -->
+            <label for="service">Select a Service:</label>
+            <select id="service" name="service">
+                <option disabled selected value> -- select an option -- </option>
+                <option value="1">Hair</option>
+                <option value="2">Nail</option>
+                <option value="3">Makeup</option>
+            </select><br>
+            <label for="service">Type of Service:</label>
+            <input type="text" id="tos" name="tos"><br>
+            <!-- Date and Time Selection -->
+            <label for="appointmentDate">Choose a Date:</label>
+            <input type="date" id="appointmentDate" name="appointmentDate"><br>
+    
+            <label for="appointmentTime">Choose a Time:</label>
+            <input type="time" id="appointmentTime" name="appointmentTime"><br>
+    
+            <!-- Contact Information -->
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" required><br>
+    
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+            
+            <input type="submit" value="Submit"><br>
+            
+        </form>
+        <br>
+        </div>
+    </div>
+    <!-- Bootstrap has components for alerts: https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp  -->
+    <!-- These can be useful for making sure someone reads something before continuing -->
+    <div class="container">
+        <h2>Holiday Hours</h2>
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            We will be <strong>closed Feb 19th</strong> for Family Day!
+        </div>
+    </div>
+
+
+
+    <!-- Including a modal https://www.w3schools.com/bootstrap4/bootstrap_modal.asp -->
+    <!-- Modals are useful for additional information or questions -->
+    <!-- Here the modal is used for a little survey -->
+    <div class="container">
+      <h2>Modal Example</h2>
+      <!-- Trigger the modal with a button -->
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mySurvey">Open Survey</button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="mySurvey" role="dialog">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      
+                      <h4 class="modal-title">Survey</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="container">
+                          <h2>How did you hear about us?</h2>
+                          <p>Tell us:</p>
+                          <form>
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" value="Social Media"> Social Media
+                                  </label>
+                              </div>
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" value="Friends & Family"> Friends & Family
+                                  </label>
+                              </div>
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" value="Other" id="otherCheckbox"> Other
+                                  </label>
+                                  <input type="text" id="otherTextInput" style="display: none;">
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <!-- Presenting the staff with cards: https://www.w3schools.com/bootstrap4/bootstrap_cards.asp -->
+    <!-- Card columns allows multiple cards next to each other -->
+    <!-- The first card's button doesn't go anywhere, it could be a modal --> 
+    <!-- My second card limits the information seen and uses collapsible to show more -->
+    
+    <div class="container p-3" style="width: 1200px;">
+        <h2>Meet our Stylists</h2>
+        <div class="card-columns" style="width: 650px;">
+          <div class="card bg-pink" style="width: 197px; text-align: left;">
+            <img class="card-img-top" src="images/Sara.jpg" alt="Card image" style="width: 100%;">
+            <div class="card-body">
+              <h4 class="card-title">Sara</h4>
+              <p class="card-text">The hair cut specialist</p>
+              <a href="#profile" class="btn btn-primary dark-pink-button" data-toggle="collapse">See Profile</a>
+              <div id="profile" class="collapse p-3">
+                <p class="card-text">Sara has been cutting hair for more than 10 years.</p>
+              </div>
+            </div>
+          </div>
+        <div class="card bg-pink" style="width: 197px;">
+            <img class="card-img-top" src="images/Zoya.jpg" alt="Card image" style="width: 100%;">
+            <div class="card-body">
+              <h4 class="card-title">Zoya</h4>
+              <p class="card-text">The curly hair specialist</p>
+              <!-- collapsible part -->
+              <a href="#profile-zoya" class="btn btn-primary dark-pink-button" data-toggle="collapse">See Profile</a>
+              <div id="profile-zoya" class="collapse p-3">
+                <p>Zoya has been our in our salon for 7 years. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+
+    <!-- A different approach would be to make the whole staff information collapsible -->
+    <!-- Here a block button (taking the full width) opens/closes the collapsible -->
+    <!-- Here a single card is used, but card columns could be used -->
+    <div class="container p-3 my-3 border bg-pink ">
+        <h2>More information</h2>
+        <a href="#contact" class="btn btn-primary btn-block dark-pink-button" data-toggle="collapse">Our Contact Info</a>
+        <div id="contact" class="collapse">
+          <p><br>Phone Number: 519-555-5555</p>
+          <p>Email Address: chichcuts@email.com</p>
+        </div>
+        <a href="#address" class="btn btn-primary btn-block dark-pink-button" data-toggle="collapse">Location</a>
+        <div id="address" class="collapse" style="height: fit-content;">
+          <p><br>Location: 555 Main St. Ottawa, ON A1B 2C3</p>
+          <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 180px">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d719085.851534262!2d-76.4597105321139!3d45.24922630491754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce05b25f5113af%3A0x8a6a51e131dd15ed!2sOttawa%2C%20ON!5e0!3m2!1sen!2sca!4v1707443294496!5m2!1sen!2sca" frameborder="0"
+              style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const otherCheckbox = document.getElementById('otherCheckbox');
+            const otherTextInput = document.getElementById('otherTextInput');
+
+            otherCheckbox.addEventListener('change', function () {
+                if (otherCheckbox.checked) {
+                    otherTextInput.style.display = 'block';
+                } else {
+                    otherTextInput.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
