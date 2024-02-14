@@ -8,7 +8,7 @@
 
 <!-- The head should contain an appropriate title for your site -->
 <head>
-    <title>Lab4</title>
+    <title>Lab5</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -92,10 +92,11 @@
     <!-- It can be useful for placement of information -->
     <div class="container">
       <nav class="row p-3">
-          <div class="col-sm-3 pl-5">Service</div>
-          <div class="col-sm-3">Calendar</div>
-          <div class="col-sm-3">Payment</div>
-          <div class="col-sm-3">Contact us</div>
+          <a href="#Services" class="nav-link" id="navigateToServices">Services</a>
+          <a href="#appointments" class="nav-link" id="navigateToappointments">Appointments</a>
+          <a href="#paymentSection" class="nav-link" id="navigateToPayment">Payments</a>
+          <a href="#ContactUs" class="nav-link" id="navigateToContactUs">Contact us</a>
+          
       </nav>
   </div>
 
@@ -132,6 +133,7 @@
     <!-- Bootstrap has different types of tables https://www.w3schools.com/bootstrap4/bootstrap_tables.asp -->
     <!-- Might be (or not) useful to show some information to the user -->
     <div class="container">
+        <div id="Services"></div>
         <h2>List of Services</h2>
         <p>You can choose from these packages for your first visit with us! </p>            
         <table class="table table-hover custom-table">
@@ -165,8 +167,12 @@
           </tbody>
         </table>
       </div>
+      <br>
 
       <div class="container border bg-pink" style="width: 1100px; justify-content: center;"><br>
+        <div id="appointments"></div>
+        <h5>Appointments</h5>
+        
         <a href="#appointment" class="btn btn-primary btn-block dark-pink-button" style= "width: 1075px;" data-toggle="collapse">Book an appointment</a><br>
         <div id="appointment" class="collapse" style="height: fit-content;">
           <form action="/submit" method="post">
@@ -300,22 +306,7 @@
     <!-- A different approach would be to make the whole staff information collapsible -->
     <!-- Here a block button (taking the full width) opens/closes the collapsible -->
     <!-- Here a single card is used, but card columns could be used -->
-    <div class="container p-3 my-3 border bg-pink ">
-        <h2>More information</h2>
-        <a href="#contact" class="btn btn-primary btn-block dark-pink-button" data-toggle="collapse">Our Contact Info</a>
-        <div id="contact" class="collapse">
-          <p><br>Phone Number: 519-555-5555</p>
-          <p>Email Address: chichcuts@email.com</p>
-        </div>
-        <a href="#address" class="btn btn-primary btn-block dark-pink-button" data-toggle="collapse">Location</a>
-        <div id="address" class="collapse" style="height: fit-content;">
-          <p><br>Location: 555 Main St. Ottawa, ON A1B 2C3</p>
-          <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 180px">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d719085.851534262!2d-76.4597105321139!3d45.24922630491754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce05b25f5113af%3A0x8a6a51e131dd15ed!2sOttawa%2C%20ON!5e0!3m2!1sen!2sca!4v1707443294496!5m2!1sen!2sca" frameborder="0"
-              style="border:0" allowfullscreen></iframe>
-          </div>
-        </div>
-    </div>
+    
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -337,6 +328,40 @@
             });
         });
     </script>
+
+
+<div id="paymentSection"></div>
+<div class="container border bg-pink" style="width: 1100px; justify-content: center;"><br>
+  <h4>Payment Information</h4>
+    <label for="cardName">Name on Card:</label>
+    <input type="text" class="form-control" id="cardName" name="cardName" placeholder="John Doe" required>
+    <label for="cardNumber">Credit Card Number:</label>
+    <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="1111-2222-3333-4444" required>
+    <label for="cardExp">Expiration Date:</label>
+        <input type="text" class="form-control" id="cardExp" name="cardExp" placeholder="MM/YY" required>
+        <label for="cardCVV">CVV:</label>
+        <input type="text" class="form-control" id="cardCVV" name="cardCVV" placeholder="123" required>
+</div>
+
+<div id="ContactUs"></div>
+<div class="container p-3 my-3 border bg-pink ">
+  <h2>Contact Us</h2>
+  <a href="#contact" class="btn btn-primary btn-block dark-pink-button" data-toggle="collapse">Contact Information</a>
+  <div id="contact" class="collapse">
+    <p><br>Phone Number: 519-555-5555</p>
+    <p>Email Address: chichcuts@email.com</p>
+  </div>
+  <a href="#address" class="btn btn-primary btn-block dark-pink-button" data-toggle="collapse">Location</a>
+  <div id="address" class="collapse" style="height: fit-content;">
+    <p><br>Location: 555 Main St. Ottawa, ON A1B 2C3</p>
+    <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 180px">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d719085.851534262!2d-76.4597105321139!3d45.24922630491754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce05b25f5113af%3A0x8a6a51e131dd15ed!2sOttawa%2C%20ON!5e0!3m2!1sen!2sca!4v1707443294496!5m2!1sen!2sca" frameborder="0"
+        style="border:0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+
 
 </body>
 </html>
