@@ -17,6 +17,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+    <script src="scripts/service.js"></script>
 
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
@@ -86,7 +87,7 @@
             <h4 class="text-center">Chic Styles For All</h4>
           </div>
       </div>
-  </div>
+    </div>
 
     <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
     <!-- It can be useful for placement of information -->
@@ -94,11 +95,11 @@
       <nav class="row p-3">
           <a href="#Services" class="nav-link" id="navigateToServices">Services</a>
           <a href="#appointments" class="nav-link" id="navigateToappointments">Appointments</a>
-          <a href="#paymentSection" class="nav-link" id="navigateToPayment">Payments</a>
+          <a href="#payment" class="nav-link" id="navigateToPayment">Payments</a>
           <a href="#ContactUs" class="nav-link" id="navigateToContactUs">Contact us</a>
           
       </nav>
-  </div>
+    </div>
 
     <!-- When you have messages to tell, remember that center align is not always the best choice -->
     <div class="container p-3 my-3 border bg-light " style="width: 650px;">
@@ -169,43 +170,103 @@
       </div>
       <br>
 
-      <div class="container border bg-pink" style="width: 1100px; justify-content: center;"><br>
-        <div id="appointments"></div>
-        <h5>Appointments</h5>
-        
-        <a href="#appointment" class="btn btn-primary btn-block dark-pink-button" style= "width: 1075px;" data-toggle="collapse">Book an appointment</a><br>
-        <div id="appointment" class="collapse" style="height: fit-content;">
-          <form action="/submit" method="post">
-            <!-- Service Selection -->
-            <label for="service">Select a Service:</label>
-            <select id="service" name="service">
-                <option disabled selected value> -- select an option -- </option>
-                <option value="1">Hair</option>
-                <option value="2">Nail</option>
-                <option value="3">Makeup</option>
-            </select><br>
-            <label for="service">Type of Service:</label>
-            <input type="text" id="tos" name="tos"><br>
-            <!-- Date and Time Selection -->
-            <label for="appointmentDate">Choose a Date:</label>
-            <input type="date" id="appointmentDate" name="appointmentDate"><br>
-    
-            <label for="appointmentTime">Choose a Time:</label>
-            <input type="time" id="appointmentTime" name="appointmentTime"><br>
-    
-            <!-- Contact Information -->
-            <label for="fullName">Full Name:</label>
-            <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" required><br>
-    
-            <label for="phoneNumber">Phone Number:</label>
-            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
-            
-            <input type="submit" value="Submit"><br>
-            
-        </form>
-        <br>
+    <div class="container p-3" style="width: 1200px;">
+      <h2>Meet our Stylists</h2>
+      <div class="card-columns" style="width: 650px;">
+        <div class="card bg-pink" style="width: 197px; text-align: left;">
+          <img class="card-img-top" src="images/Sara.jpg" alt="Card image" style="width: 100%;">
+          <div class="card-body">
+            <h4 class="card-title">Sara</h4>
+            <p class="card-text">The hair cut specialist</p>
+            <a href="#profile" class="btn btn-primary dark-pink-button" data-toggle="collapse">See Profile</a>
+            <div id="profile" class="collapse p-3">
+              <p class="card-text">Sara has been cutting hair for more than 10 years.</p>
+            </div>
+          </div>
         </div>
+      <div class="card bg-pink" style="width: 197px;">
+          <img class="card-img-top" src="images/Zoya.jpg" alt="Card image" style="width: 100%;">
+          <div class="card-body">
+            <h4 class="card-title">Zoya</h4>
+            <p class="card-text">The curly hair specialist</p>
+            <!-- collapsible part -->
+            <a href="#profile-zoya" class="btn btn-primary dark-pink-button" data-toggle="collapse">See Profile</a>
+            <div id="profile-zoya" class="collapse p-3">
+              <p>Zoya has been our in our salon for 7 years. </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    
+    <div class="container border bg-pink" style="width: 1100px; justify-content: center;"><br>
+      <div id="appointments"></div>
+      <h5>Appointments</h5>
+      <a href="#appointment" class="btn btn-primary btn-block dark-pink-button" style= "width: 1075px;" data-toggle="collapse">Book an appointment</a><br>
+      <div id="appointment" class="collapse" style="height: fit-content;">
+        <form action="/payment" method="post">
+          <!-- Service Selection -->
+          <label for="service">Select a Service:</label>
+          <select id="service" name="service">
+              <option disabled selected value> -- select an option -- </option>
+              <option value="1">Hair</option>
+              <option value="2">Nail</option>
+              <option value="3">Makeup</option>
+          </select><br>
+          <label for="service">Type of Service:</label>
+          <input type="text" id="tos" name="tos" required><br>
+
+          <label for="expert">Choose your Stylist:</label>
+          <select id="expert" name="expert" required>
+              <option disabled selected value> -- select an option -- </option>
+              <option value="1">Sara</option>
+              <option value="2">Zoya</option>
+          </select><br>
+          <!-- Date and Time Selection -->
+          <label for="appointmentDate">Choose a Date:</label>
+          <input type="date" id="appointmentDate" name="appointmentDate" required><br>
+
+          <label for="appointmentTime">Choose a Time:</label>
+          <input type="time" id="appointmentTime" name="appointmentTime" required> <br>
+
+          <!-- Contact Information -->
+          <label for="fullName">Full Name:</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" required><br>
+
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+
+          <input type="submit" value="Submit"><br>
+          <br>
+          
+          <a href="#payment" class="btn btn-primary btn-block dark-pink-button" style= "width: 1075px;" data-toggle="collapse">Go to Payment</a><br>
+          <div id="payment" class="collapse" style="height: fit-content;">
+            <form action="/payment" method="post">
+              <div id="paymentSection"></div>
+                <div class="container border bg-pink" style="width: 1075px; justify-content: center;"><br>
+                    <h4>Payment Information</h4>
+                    <label for="cardName">Name on Card:</label>
+                    <input type="text" class="form-control" id="cardName" name="cardName" placeholder="John Doe" required>
+                    <label for="cardNumber">Credit Card Number:</label>
+                    <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="1111-2222-3333-4444" required>
+                    <label for="cardExp">Expiration Date:</label>
+                        <input type="text" class="form-control" id="cardExp" name="cardExp" placeholder="MM/YY" required>
+                        <label for="cardCVV">CVV:</label>
+                        <input type="text" class="form-control" id="cardCVV" name="cardCVV" placeholder="123" required>
+                      <br>
+                    <input type="submit" value="Pay Now"><br>
+                    <br>
+                </div>
+          
+                </form>
+                <br>
+              </div>
+      </div>
+    </div>
+
+    
+
+
     <!-- Bootstrap has components for alerts: https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp  -->
     <!-- These can be useful for making sure someone reads something before continuing -->
     <div class="container">
@@ -215,6 +276,7 @@
             We will be <strong>closed Feb 19th</strong> for Family Day!
         </div>
     </div>
+  </div>
 
 
 
@@ -272,37 +334,7 @@
     <!-- The first card's button doesn't go anywhere, it could be a modal --> 
     <!-- My second card limits the information seen and uses collapsible to show more -->
     
-    <div class="container p-3" style="width: 1200px;">
-        <h2>Meet our Stylists</h2>
-        <div class="card-columns" style="width: 650px;">
-          <div class="card bg-pink" style="width: 197px; text-align: left;">
-            <img class="card-img-top" src="images/Sara.jpg" alt="Card image" style="width: 100%;">
-            <div class="card-body">
-              <h4 class="card-title">Sara</h4>
-              <p class="card-text">The hair cut specialist</p>
-              <a href="#profile" class="btn btn-primary dark-pink-button" data-toggle="collapse">See Profile</a>
-              <div id="profile" class="collapse p-3">
-                <p class="card-text">Sara has been cutting hair for more than 10 years.</p>
-              </div>
-            </div>
-          </div>
-        <div class="card bg-pink" style="width: 197px;">
-            <img class="card-img-top" src="images/Zoya.jpg" alt="Card image" style="width: 100%;">
-            <div class="card-body">
-              <h4 class="card-title">Zoya</h4>
-              <p class="card-text">The curly hair specialist</p>
-              <!-- collapsible part -->
-              <a href="#profile-zoya" class="btn btn-primary dark-pink-button" data-toggle="collapse">See Profile</a>
-              <div id="profile-zoya" class="collapse p-3">
-                <p>Zoya has been our in our salon for 7 years. </p>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    
-
-
+   
     <!-- A different approach would be to make the whole staff information collapsible -->
     <!-- Here a block button (taking the full width) opens/closes the collapsible -->
     <!-- Here a single card is used, but card columns could be used -->
@@ -328,20 +360,6 @@
             });
         });
     </script>
-
-
-<div id="paymentSection"></div>
-<div class="container border bg-pink" style="width: 1100px; justify-content: center;"><br>
-  <h4>Payment Information</h4>
-    <label for="cardName">Name on Card:</label>
-    <input type="text" class="form-control" id="cardName" name="cardName" placeholder="John Doe" required>
-    <label for="cardNumber">Credit Card Number:</label>
-    <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="1111-2222-3333-4444" required>
-    <label for="cardExp">Expiration Date:</label>
-        <input type="text" class="form-control" id="cardExp" name="cardExp" placeholder="MM/YY" required>
-        <label for="cardCVV">CVV:</label>
-        <input type="text" class="form-control" id="cardCVV" name="cardCVV" placeholder="123" required>
-</div>
 
 <div id="ContactUs"></div>
 <div class="container p-3 my-3 border bg-pink ">
