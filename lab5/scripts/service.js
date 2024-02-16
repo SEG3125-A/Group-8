@@ -23,7 +23,7 @@ function validatePhone(txtPhone) {
 // Document of datepicker is here: https://api.jqueryui.com/datepicker/ 
 // The following code shows how to set specific dates to exclude, as well as Sundays (Day 0)
 // Make sure in your version that you associate Days to remove with Experts (e.g. John doesn't work Mondays)
-var unavailableDates = ["06/29/2020","07/07/2020","07/10/2020"]
+var unavailableDates = ["02/24/2024","02/07/2024","02/10/2024"]
 const setDateFormat = "mm/dd/yy";
 
 function disableDates(date) {
@@ -42,14 +42,14 @@ $(document).ready(function(){
     // and also some feedback as an Alert + putting a value in the input that shows the format required
     // the "addClass" will use the class "error" defined in style.css and add it to the phone input
     // The "error" class in style.css defines yellow background and red foreground
-    $("#phone").on("change", function(){
-        if (!validatePhone("phone")){
-            alert("Wrong format for phone");
-            $("#phone").val("(xxxx)");
-            $("#phone").addClass("error");
+    $("#phoneNumber").on("change", function(){
+        if (!validatePhone("phoneNumber")){
+            alert("Wrong format for phoneNumber");
+            $("#phoneNumber").val("(xxxx)");
+            $("#phoneNumber").addClass("error");
         }
         else {
-            $("#phone").removeClass("error");
+            $("#phoneNumber").removeClass("error");
         }
     });
 
@@ -60,11 +60,11 @@ $(document).ready(function(){
 
     // Also, here is a good tutorial for playing with the datepicker in https://webkul.com/blog/jquery-datepicker/ 
     // Datepicker is also documented as one of the widgets here: https://api.jqueryui.com/category/widgets/ 
-    $( "#dateInput" ).datepicker(
+    $( "#appointmentDate" ).datepicker(
         {
             dateFormat: setDateFormat,
             // no calendar before June 1rst 2020
-            minDate: new Date('06/01/2020'),  
+            minDate: new Date('02/01/2024'),  
             maxDate: '+4M',
             // used to disable some dates
             beforeShowDay: $.datepicker.noWeekends,
