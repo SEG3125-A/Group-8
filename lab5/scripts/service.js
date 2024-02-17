@@ -1,15 +1,6 @@
-// Function to verify that the phone number is correct.
-// Here, I validate for (12345), but you have to change that for a phone validation
-// Tutorials on Regular expressions
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions 
-// https://flaviocopes.com/javascript-regular-expressions/ 
-// Regular expressions can get complex, you can think in terms of a series of characters
-// or numbers 
 function validatePhone(txtPhone) {
     var a = document.getElementById(txtPhone).value;
-    // This filter asks for something like (12345), so parentheses with any number (at least 1)
-    // of digits
-    var filter = /^(\([-+]?[0-9]+)\)$/;
+    var filter = /^(\d{3}-\d{3}-\d{4}|\d{10})$/;
     if (filter.test(a)) {
         return true;
     }
@@ -18,7 +9,16 @@ function validatePhone(txtPhone) {
     }
 }
 
-
+function validateCard(cardNum) {
+    var a = document.getElementById(cardNum).value;
+    var filter = /^(\d{4}-\d{4}-\d{4}-\d{4}|\d{16})$/;
+    if (filter.test(a)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 // Using date restrictions on datepicker
 // Document of datepicker is here: https://api.jqueryui.com/datepicker/ 
 // The following code shows how to set specific dates to exclude, as well as Sundays (Day 0)
@@ -45,7 +45,7 @@ $(document).ready(function(){
     $("#phoneNumber").on("change", function(){
         if (!validatePhone("phoneNumber")){
             alert("Wrong format for phoneNumber");
-            $("#phoneNumber").val("(xxxx)");
+            $("#phoneNumber").val("");
             $("#phoneNumber").addClass("error");
         }
         else {
@@ -63,15 +63,25 @@ $(document).ready(function(){
     $( "#appointmentDate" ).datepicker(
         {
             dateFormat: setDateFormat,
-            // no calendar before June 1rst 2020
             minDate: new Date('02/01/2024'),  
             maxDate: '+4M',
-            // used to disable some dates
-            beforeShowDay: $.datepicker.noWeekends,
-            beforeShowDay: disableDates
+            beforeShowDay: function(date) {
+                var day = date.getDay();
+                return [(day != 0), ''];
+            }
         }   
     );
-
+    $("#cardNumber").on("change", function(){
+        if (!validateCard("cardNumber")){
+            alert("Wrong format for cardNumber");
+            $("#cardNumber").val("");
+            $("#cardNumber").addClass("error");
+        }
+        else {
+            $("#cardNumber").removeClass("error");
+        }
+    });
+    
 
     // Look at the different events on which an action can be performed
     // https://www.w3schools.com/jquery/jquery_events.asp
