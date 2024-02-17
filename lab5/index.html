@@ -18,7 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
     <script src="scripts/service.js"></script>
-
+    <script src="https://kit.fontawesome.com/a03b673a1f.js" crossorigin="anonymous"></script>
     <!-- Your own additional style sheet -->
     <link href="styles/style.css" rel="stylesheet" type="text/css">
     <style>
@@ -92,14 +92,15 @@
     <!-- Bootstrap contains a grid system you can explore https://www.w3schools.com/bootstrap4/bootstrap_grid_system.asp -->
     <!-- It can be useful for placement of information -->
     <div class="container">
-      <nav class="row p-3">
-          <a href="#Services" class="nav-link" id="navigateToServices">Services</a>
-          <a href="#appointments" class="nav-link" id="navigateToappointments">Appointments</a>
-          <a href="#payment" class="nav-link" id="navigateToPayment">Payments</a>
-          <a href="#ContactUs" class="nav-link" id="navigateToContactUs">Contact us</a>
-          
+      <nav class="row p-3 justify-content-center">
+        <a href="#Services" class="nav-link" id="navigateToServices"><i class="fas fa-list"></i> Services</a>
+        <a href="#appointments" class="nav-link" id="navigateToappointments"><i class="fas fa-calendar-alt"></i> Appointments</a>
+        <a href="#payment" class="nav-link" id="navigateToPayment"><i class="fas fa-dollar-sign"></i> Payments</a>
+        <a href="#ContactUs" class="nav-link" id="navigateToContactUs"><i class="fas fa-envelope"></i> Contact us</a>
       </nav>
     </div>
+    
+    
 
     <!-- When you have messages to tell, remember that center align is not always the best choice -->
     <div class="container p-3 my-3 border bg-light " style="width: 650px;">
@@ -135,7 +136,7 @@
     <!-- Might be (or not) useful to show some information to the user -->
     <div class="container">
         <div id="Services"></div>
-        <h2>List of Services</h2>
+        <h2> <i class="fas fa-list"></i> List of Services</h2>
         <p>You can choose from these packages for your first visit with us! </p>            
         <table class="table table-hover custom-table">
           <thead>
@@ -171,7 +172,7 @@
       <br>
 
     <div class="container p-3" style="width: 1200px;">
-      <h2>Meet our Stylists</h2>
+      <h2><i class="fa-solid fa-person-dress"></i> Meet our Stylists</h2>
       <div class="card-columns" style="width: 650px;">
         <div class="card bg-pink" style="width: 197px; text-align: left;">
           <img class="card-img-top" src="images/Sara.jpg" alt="Card image" style="width: 100%;">
@@ -180,7 +181,7 @@
             <p class="card-text">The hair cut specialist</p>
             <a href="#profile" class="btn btn-primary dark-pink-button" data-toggle="collapse">See Profile</a>
             <div id="profile" class="collapse p-3">
-              <p class="card-text">Sara has been cutting hair for more than 10 years.</p>
+              <p class="card-text">Sara has been cutting hair for 10+ years.</p>
             </div>
           </div>
         </div>
@@ -201,7 +202,7 @@
     
     <div class="container border bg-pink" style="width: 1100px; justify-content: center;"><br>
       <div id="appointments"></div>
-      <h5>Appointments</h5>
+      <h5><i class="fas fa-calendar-alt"></i> Appointments</h5>
       <a href="#appointment" class="btn btn-primary btn-block dark-pink-button" style= "width: 1075px;" data-toggle="collapse">Book an appointment</a><br>
       <div id="appointment" class="collapse" style="height: fit-content;">
         <form action="/payment" method="post">
@@ -225,9 +226,8 @@
           <!-- Date and Time Selection -->
           <label for="appointmentDate">Choose a Date:</label>
           <input type="date" id="appointmentDate" name="appointmentDate" required><br>
-
           <label for="appointmentTime">Choose a Time:</label>
-          <input type="time" id="appointmentTime" name="appointmentTime" required> <br>
+          <input type="time" id="appointmentTime" name="appointmentTime" min="10:00" max="19:00" value="10:00" required> <br>
 
           <!-- Contact Information -->
           <label for="fullName">Full Name:</label>
@@ -263,6 +263,7 @@
               </div>
       </div>
     </div>
+    <br>
 
     
 
@@ -270,7 +271,7 @@
     <!-- Bootstrap has components for alerts: https://www.w3schools.com/bootstrap4/bootstrap_alerts.asp  -->
     <!-- These can be useful for making sure someone reads something before continuing -->
     <div class="container">
-        <h2>Holiday Hours</h2>
+        <h2><i class="fa-solid fa-gift"></i> Holiday Hours</h2>
         <div class="alert alert-danger alert-dismissible">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             We will be <strong>closed Feb 19th</strong> for Family Day!
@@ -284,7 +285,7 @@
     <!-- Modals are useful for additional information or questions -->
     <!-- Here the modal is used for a little survey -->
     <div class="container">
-      <h2>Modal Example</h2>
+      <h2><i class="fa-solid fa-clipboard-question"></i> Modal Example</h2>
       <!-- Trigger the modal with a button -->
       <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mySurvey">Open Survey</button>
 
@@ -363,7 +364,7 @@
 
 <div id="ContactUs"></div>
 <div class="container p-3 my-3 border bg-pink ">
-  <h2>Contact Us</h2>
+  <h2> <i class="fas fa-envelope"></i> Contact Us</h2>
   <a href="#contact" class="btn btn-primary btn-block dark-pink-button" data-toggle="collapse">Contact Information</a>
   <div id="contact" class="collapse">
     <p><br>Phone Number: 519-555-5555</p>
