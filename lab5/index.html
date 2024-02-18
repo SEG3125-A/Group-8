@@ -241,7 +241,7 @@
           
           <a href="#payment" class="btn btn-primary btn-block dark-pink-button" style= "width: 1075px;" data-toggle="collapse">Go to Payment</a><br>
           <div id="payment" class="collapse" style="height: fit-content;">
-            <form action="/payment" method="post">
+            <form action="" method="post">
               <div id="paymentSection"></div>
                 <div class="container border bg-pink" style="width: 1075px; justify-content: center;"><br>
                     <h4>Payment Information</h4>
@@ -361,6 +361,27 @@
             });
         });
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      var expertAvailability = {
+        '1': [3, 4], // Sara is not available on Wednesday (3) and Thursday (4)
+        '2': [4, 5]  // Zoya is not available on Thursday (4) and Friday (5)
+      };
+    
+      $('#expert, #appointmentDate').change(function() {
+        var expert = $('#expert').val();
+        var date = $('#appointmentDate').val().split('-');
+        var dayOfWeek = new Date(date[0], date[1] - 1, date[2]).getDay();
+    
+        if (expert && expertAvailability[expert].includes(dayOfWeek)) {
+          alert('The selected expert is not available on the chosen date. Please select another date.');
+          $('#appointmentDate').val(''); // reset the date input field
+        }
+      });
+    });
+    </script>
+    
 
 <div id="ContactUs"></div>
 <div class="container p-3 my-3 border bg-pink ">
@@ -383,4 +404,5 @@
 
 
 </body>
+
 </html>
