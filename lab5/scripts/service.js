@@ -19,19 +19,15 @@ function validateCard(cardNum) {
         return false;
     }
 }
-// Using date restrictions on datepicker
-// Document of datepicker is here: https://api.jqueryui.com/datepicker/ 
-// The following code shows how to set specific dates to exclude, as well as Sundays (Day 0)
-// Make sure in your version that you associate Days to remove with Experts (e.g. John doesn't work Mondays)
-var unavailableDates = ["02/24/2024","02/07/2024","02/10/2024"]
-const setDateFormat = "mm/dd/yy";
-
-function disableDates(date) {
-    // Sunday is Day 0, disable all Sundays
-    if (date.getDay() == 0)
-        return [false];
-    var string = jQuery.datepicker.formatDate(setDateFormat, date);
-    return [ unavailableDates.indexOf(string) == -1 ]
+function validateCVV(cardCVV) {
+    var a = document.getElementById(cardCVV).value;
+    var filter = /^(\d{3}|\d{4})$/;
+    if (filter.test(a)) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 
@@ -81,27 +77,17 @@ $(document).ready(function(){
             $("#cardNumber").removeClass("error");
         }
     });
-    
-
-    // Look at the different events on which an action can be performed
-    // https://www.w3schools.com/jquery/jquery_events.asp
-    // Here, we put 
-    $("#debit").on("mouseenter", function(){
-        $("#debit").addClass("showInput");
-    });
-
-    $("#debit").on("mouseleave", function(){
-        $("#debit").removeClass("showInput");
-    });
-  
-    // https://jqueryui.com/tooltip/ 
-    // The class "highlight" used here is predefined in JQuery UI
-    // the message of the tooltip is encoded in the input (in the HTML file)
-    $("#debit").tooltip({
-        classes: {
-          "ui-tooltip": "highlight"
+    $("#cardCVV").on("change", function(){
+        if (!validateCard("cardCVV")){
+            alert("Wrong format for cardCVV");
+            $("#cardCVV").val("");
+            $("#cardCVV").addClass("error");
         }
-      });
+        else {
+            $("#cardCVV").removeClass("error");
+        }
+    });
+
 
 
 });
