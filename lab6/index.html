@@ -1,3 +1,6 @@
+<!-- This file contains many elements adapted from the online tutoral -->
+<!-- on Bootstrap 4 as found here: https://www.w3schools.com/bootstrap4/default.asp -->
+<!----https://getbootstrap.com/docs/4.4/components/forms/-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,7 +11,7 @@
   </head>
   
   <body>
-    <div class="container">
+    <div class="form-container">
       <h1 class="text-center mt-5">Website UI Analysis Survey</h1>
       <form id="myform" action="index.php">
         <div class="mt-3">
@@ -31,7 +34,7 @@
             <input type="text" class="form-control" name="lastname">
           </div>
         </div>
-
+       
         <div class="mt-4">
           <h2>Please answer the following questions related to the UI of the provided website</h2>
           <div class="form-group">
@@ -55,7 +58,7 @@
           <br>
           <div class="mt-4">
             <label for="Q2" class="form-label">Q2: How difficult was it to change the site from English to French?(1-5)</label>
-            <select class="form-select" id="Q2RatingScale" required>
+            <select class="form-control" id="Q2RatingScale" required>
               <option value="">Please select an option</option>
               <option value="1">1-Super Easy! Only took 1 click</option>
               <option value="2">2-Simple, but took a few steps</option>
@@ -65,16 +68,16 @@
               </select>
           </div>
         <br>
-
         <div class="mt-4">
-          <label for="Q3-dropdown" class="form-label">Q3: How would you describe the <i>Shop Product</i> drop down menu?</label>
-          <select class="form-select" id="Q3-dropdown" required>
-              <option value="">Choose...</option>
-              <option value="1">Disorganized and confusing to use</option>
-              <option value="2">Logically categorized and intuitive</option>
-              <option value="3">Took some time to get use to</option>
-          </select>
-      </div>
+          <label for="Q3" class="form-label">Q3: How would you describe the <i>Shop Product</i> drop down menu?</label>
+            <select multiple class="form-control" id="Q3"  required>
+              <option value="">I got a headache while using it</option>
+              <option value="">Disorganized and confusing to use</option>
+              <option value="">Logically categorized and intuitive</option>
+              <option value="">Took some time to get use to</option>
+              <option value="">It looks nice and organized</option>
+            </select>
+        </div>
       <br>
       <div class="mt-4">
         <label for="Q4" class="form-label">Q4: Which visual did you prefer to redirect to a product page, a text link or a picture link?</label>
@@ -151,8 +154,8 @@
         </div>
 
         <p id="signature">Site created by Group Eight</p>
-      </form>
-    </div>
+</form>
+</div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
