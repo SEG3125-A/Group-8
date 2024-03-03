@@ -1,6 +1,14 @@
 [
   {
     "Q7Ans": "Yes",
+    "count": 3
+  },
+  {
+    "Q7Ans": "No",
     "count": 2
+  },
+  {
+    "Q7Ans": "Sorta",
+    "count": 1
   }
 ]

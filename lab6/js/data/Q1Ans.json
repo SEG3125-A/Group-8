@@ -1,10 +1,22 @@
 [
   {
     "Q1Ans": "Eye Catching",
-    "count": 2
+    "count": 4
   },
   {
     "Q1Ans": "Clustered",
-    "count": 2
+    "count": 4
+  },
+  {
+    "Q1Ans": "Unremarkable",
+    "count": 1
+  },
+  {
+    "Q1Ans": "Vibrant",
+    "count": 1
+  },
+  {
+    "Q1Ans": "Informative",
+    "count": 1
   }
 ]
