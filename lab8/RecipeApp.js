@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, FlatList, Alert, TextInput, Button } from 'react-native';
+import { StyleSheet, View, FlatList, Alert, TextInput, Button, ScrollView } from 'react-native';
 import Header from './components/header';
 import RecipeIngredient from './components/RecipeIngredient';
 import AddToRecipe from './components/addToRecipe';
@@ -48,14 +48,13 @@ export default function RecipeApp({ navigation }) {
           value={title}
         />
         <AddToRecipe submitHandler={submitHandler} />
-        <View style={styles.list}>
-          <FlatList
-            data={Ingreds}
-            renderItem={({ item }) => (
-              <RecipeIngredient Ingred={item} pressHandler={pressHandler} />
-            )}
-          />
-        </View>
+      </View>
+      <ScrollView style={styles.list}>
+        {Ingreds.map((item) => (
+          <RecipeIngredient key={item.key} Ingred={item} pressHandler={pressHandler} />
+        ))}
+      </ScrollView>
+      <View style={{ marginTop: 20 }}>
         <Button
           title="Go to Steps"
           onPress={() => navigation.navigate('StepsPage')}
@@ -74,6 +73,7 @@ const styles = StyleSheet.create({
     padding: 40,
   },
   list: {
+    flex: 1,
     marginTop: 20,
   },
   titleInput: {
