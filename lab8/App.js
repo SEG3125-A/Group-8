@@ -1,8 +1,10 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import RecipeApp from './RecipeApp'; // The file that contains the code you posted
-import StepsPage from './components/StepsPage'; // The file for your StepsPage component
+import RecipeApp from './RecipeApp'; 
+import StepsPage from './components/StepsPage'; 
+import RecipeList from './RecipeList';
+import RecipeDetails from './RecipeDetails';
 
 const Stack = createStackNavigator();
 
@@ -12,6 +14,8 @@ export default function App() {
       <Stack.Navigator initialRouteName="RecipeApp">
         <Stack.Screen name="RecipeApp" component={RecipeApp} />
         <Stack.Screen name="StepsPage" component={StepsPage} />
+        <Stack.Screen name="RecipeList" component={RecipeList} />
+        <Stack.Screen name="RecipeDetails" component={RecipeDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );

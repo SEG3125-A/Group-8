@@ -3,6 +3,7 @@ import { StyleSheet, View, FlatList, Alert, TextInput, Button, ScrollView } from
 import Header from './components/header';
 import RecipeIngredient from './components/RecipeIngredient';
 import AddToRecipe from './components/addToRecipe';
+import RecipeList from './RecipeList';
 
 import StepsPage from './components/StepsPage';
 
@@ -39,7 +40,7 @@ export default function RecipeApp({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Header />
+      <Header navigation={navigation} />
       <View style={styles.content}>
         <TextInput
           style={styles.titleInput}
@@ -54,10 +55,14 @@ export default function RecipeApp({ navigation }) {
           <RecipeIngredient key={item.key} Ingred={item} pressHandler={pressHandler} />
         ))}
       </ScrollView>
-      <View style={{ marginTop: 20 }}>
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }}>
         <Button
           title="Go to Steps"
           onPress={() => navigation.navigate('StepsPage')}
+        />
+        <Button
+          title="View Recipes"
+          onPress={() => navigation.navigate('RecipeList')}
         />
       </View>
     </View>
